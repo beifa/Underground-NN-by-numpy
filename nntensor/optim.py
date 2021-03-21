@@ -1,4 +1,3 @@
-
 import numpy as np
 
 class SGD:
@@ -38,8 +37,7 @@ class SGD:
                 t.data +=  upd 
 
         for t in self.tensors:
-            t.data -= self.lr * t.grad  
-   
+            t.data -= self.lr * t.grad     
 
 
 class Adam:
@@ -74,5 +72,4 @@ class Adam:
             m_hat = self.m[i] / (1. - self.b1 ** self.t)
             v_hat = self.v[i] / (1. - self.b2 ** self.t)
 
-            t.data -= self.lr * m_hat / (np.sqrt(v_hat) + self.eps)
-      
+            t.data -= self.lr * m_hat / (np.sqrt(v_hat) + self.eps)      
